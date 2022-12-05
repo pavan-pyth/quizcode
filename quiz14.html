@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple quiz 2</title>
+    <style>
+        
+        .container {
+		         border:3px solid black;
+            border-radius: 10px;
+            width: 60%;
+            padding: 20px;
+            display: none;
+	     }
+
+        .button {
+            margin: 30px;
+			
+			
+        
+}
+</style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        Q1. Who Was the 1st ODI captain for India?<hr>
+        <input  type="radio" name="question1" id="correct1">&nbsp&nbspA.&nbsp&nbspAjit Wadekar<br>
+        <input type="radio" name="question1" >&nbsp&nbspB.&nbsp&nbspBishen Singh Bedi<br>
+        <input type="radio" name="question1" >&nbsp&nbspC.&nbsp&nbspNawab pataudi<br>
+        <input type="radio" name="question1" >&nbsp&nbspD.&nbsp&nbspVinoo Mankad<br>
+        <button class="next" onclick="next(1)">NEXT</button>
+		
+    </div>
+
+    <div class="container">
+        Q2. Who Has Made The Fastset Test Century in Test Cricket?<hr>
+        <input type="radio" name="question2" >&nbsp&nbspA.&nbsp&nbspSachin Tendulkar<br>
+        <input type="radio" name="question2" >&nbsp&nbspB.&nbsp&nbspSahid Afridi<br>
+        <input type="radio" name="question2" >&nbsp&nbspC.&nbsp&nbspVirendra Sehwag<br>
+        <input type="radio" name="question2" id="correct2">&nbsp&nbspD.&nbsp&nbspVivian Richards<br>
+        <button class="next" onclick="next(2)">NEXT</button>
+    </div>
+
+    <div class="container">
+        Q3. Which Team Has The Largest Successful Run Chase Record In ODIs?<hr>
+        <input type="radio" name="question3" >&nbsp&nbspA.&nbsp&nbspEngland<br>
+        <input type="radio" name="question3" id="correct3">&nbsp&nbspB.&nbsp&nbspSouth Africa<br>
+        <input type="radio" name="question3" >&nbsp&nbspC.&nbsp&nbspAustralia<br>
+        <input type="radio" name="question3" >&nbsp&nbspD.&nbsp&nbspIndia<br>
+	 <button class="next" onclick="next(3)">NEXT</button>
+      
+    </div>
+	<div class="container">
+        Q4. Which Bowler Had The Best Figures In a Test Match?<hr>
+        <input type="radio" name="question4" >&nbsp&nbspA.&nbsp&nbspMuttiah Muralitharan<br>
+        <input type="radio" name="question4" >&nbsp&nbspB.&nbsp&nbspBob Massie<br>
+        <input type="radio" name="question4" id="correct4">&nbsp&nbspC.&nbsp&nbspJim Laker<br>
+        <input type="radio" name="question4" >&nbsp&nbspD.&nbsp&nbspGeorge Lohmann<br>
+	 <button class="next" onclick="next(4)">NEXT</button>
+    </div>
+	<div class="container">
+        Q5. Where Did India Play Its 1st One Day International Match?<hr>
+        <input type="radio" name="question5" >&nbsp&nbspA.&nbsp&nbspLords<br>
+        <input type="radio" name="question5" id="correct5">&nbsp&nbspB.&nbsp&nbspHeadingley<br>
+        <input type="radio" name="question5" >&nbsp&nbspC.&nbsp&nbspTaunton<br>
+        <input type="radio" name="question5" >&nbsp&nbspD.&nbsp&nbspThe Oval<br>
+	 <button class="next" onclick="next(5)">NEXT</button>
+    </div>
+<div class="container">
+     <button onclick="result()">SUBMIT QUIZ</button>
+</div>
+    <script>
+        // displaying the first block of question
+        document.getElementsByClassName('container')[0].style.display = "block";
+
+        // DEFINING THE NEXT FUNCTION
+        function next(id) {
+            document.getElementsByClassName('container')[id-1].style.display = "none";
+            document.getElementsByClassName('container')[id].style.display = "block";
+        }
+		
+        //getting final result
+        function result() {
+            var score = 0;
+            if (document.getElementById('correct1').checked) {
+                score++;
+            }
+            if (document.getElementById('correct2').checked) {
+                score++;
+            }
+            if (document.getElementById('correct3').checked) {
+                score++;
+            }
+			if (document.getElementById('correct4').checked) {
+                score++;
+            }
+			if (document.getElementById('correct5').checked) {
+                score++;
+            }
+            alert("your score is: "+ score);
+        }
+		
+    </script>
+</body>
+</html>  
